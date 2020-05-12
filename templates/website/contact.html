@@ -195,24 +195,32 @@
               <h2>Get In Touch</h2>
               <div class="line"></div>
             </div>
-            <!-- Form -->
-            <form action="#" method="post">
-              <div class="row">
-                <div class="col-lg-6">
-                  <input type="text" name="message-name" class="form-control mb-30" placeholder="Your Name">
+            {% if messages %}
+              <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <!-- Form -->
+              <form action="{% url 'contact' %}" method="post">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-lg-6">
+                    <input type="text" name="message_name" class="form-control mb-30" placeholder="Your Name">
+                  </div>
+                  <div class="col-lg-6">
+                    <input type="email" name="message_email" class="form-control mb-30" placeholder="Your Email">
+                  </div>
+                  <div class="col-12">
+                    <textarea name="message" class="form-control mb-30" placeholder="Your Message"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn dento-btn">Send Message</button>
+                  </div>
                 </div>
-                <div class="col-lg-6">
-                  <input type="email" name="message-email" class="form-control mb-30" placeholder="Your Email">
-                </div>
-                <div class="col-12">
-                  <textarea name="message" class="form-control mb-30" placeholder="Your Message"></textarea>
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="btn dento-btn">Send Message</button>
-                </div>
-              </div>
-            </form>
-
+              </form>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -221,7 +229,7 @@
   <!-- ***** Contact Area End ***** -->
 
   <!-- ***** Footer Area Start ***** -->
-  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/3.jpg);">
+  <footer class="footer-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/3.jpg' %});">
     <div class="container">
       <div class="row">
         <!-- Single Footer Widget -->
