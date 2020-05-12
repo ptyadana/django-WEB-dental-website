@@ -10,7 +10,7 @@ Upon submitting details in Contact Us page, admin will recive the details via em
 + [Django 3](https://www.djangoproject.com/) - a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 + [bootstrap 4](https://getbootstrap.com/) - the world’s most popular front-end component library..
 
-![Dental Clinic](https://placeholder.com/)
+![Dental Clinic](https://raw.githubusercontent.com/ptyadana/django-WEB-dental-website/master/screenshot.png)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
