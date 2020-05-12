@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
@@ -11,10 +12,10 @@
   <title>Dento - Dentist &amp; Medical HTML Template</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="./img/core-img/favicon.ico">
+  <link rel="icon" href="{% static 'website/img/core-img/favicon.ico'%}">
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{% static 'website/style.css' %}">
 
 </head>
 
@@ -62,7 +63,7 @@
           <nav class="classy-navbar justify-content-between" id="dentoNav">
 
             <!-- Logo -->
-            <a class="nav-brand" href="index.html"><img src="./img/core-img/logo.png" alt=""></a>
+            <a class="nav-brand" href="{% url 'home' %}"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -80,16 +81,16 @@
               <!-- Nav Start -->
               <div class="classynav">
                 <ul id="nav">
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="{% url 'home' %}">Home</a></li>
                   <li><a href="#">Pages</a>
                     <ul class="dropdown">
-                      <li><a href="index.html">- Home</a></li>
-                      <li><a href="about.html">- About Us</a></li>
-                      <li><a href="service.html">- Service</a></li>
-                      <li><a href="pricing.html">- Pricing</a></li>
-                      <li><a href="blog.html">- Blog</a></li>
-                      <li><a href="blog-details.html">- Blog Details</a></li>
-                      <li><a href="contact.html">- Contact</a></li>
+                      <li><a href="{% url 'home' %}">- Home</a></li>
+                      <li><a href="{% url 'about' %}">- About Us</a></li>
+                      <li><a href="{% url 'service' %}">- Service</a></li>
+                      <li><a href="{% url 'pricing' %}">- Pricing</a></li>
+                      <li><a href="{% url 'blog' %}">- Blog</a></li>
+                      <li><a href="{% url 'blog_details' %}">- Blog Details</a></li>
+                      <li><a href="{% url 'contact' %}">- Contact</a></li>
                       <li><a href="#">- Dropdown</a>
                         <ul class="dropdown">
                           <li><a href="#">- Dropdown Item</a></li>
@@ -107,16 +108,16 @@
                       </li>
                     </ul>
                   </li>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="service.html">Service</a></li>
-                  <li><a href="pricing.html">Pricing</a></li>
+                  <li><a href="{% url 'about' %}">About</a></li>
+                  <li><a href="{% url 'service' %}">Service</a></li>
+                  <li><a href="{% url 'pricing' %}">Pricing</a></li>
                   <li><a href="#">Blog</a>
                     <ul class="dropdown">
-                      <li><a href="blog.html">- Blog</a></li>
-                      <li><a href="blog-details.html">- Blog Details</a></li>
+                      <li><a href="{% url 'blog' %}">- Blog</a></li>
+                      <li><a href="{% url 'blog_details' %}">- Blog Details</a></li>
                     </ul>
                   </li>
-                  <li><a href="./contact.html">Contact</a></li>
+                  <li><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
               </div>
               <!-- Nav End -->
@@ -132,7 +133,7 @@
   <!-- ***** Header Area End ***** -->
 
   <!-- ***** Breadcrumb Area Start ***** -->
-  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url(img/bg-img/12.jpg);">
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/12.jpg' %});">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
@@ -227,7 +228,7 @@
         <!-- Single Footer Widget -->
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="single-footer-widget">
-            <a href="./index.html" class="d-block mb-4"><img src="./img/core-img/logo.png" alt=""></a>
+            <a href="{% url 'home' %}" class="d-block mb-4"><img src="{% static 'website/img/core-img/logo.png' %}" alt=""></a>
             <p>Etiam sutor risus, dapibus act elefend katen, lacinia sitamet denim. Mauris sagittis kansa interdum dignissim.</p>
             <div class="footer-contact">
               <p><i class="icon_pin"></i> 28 Jackson Street, Chicago, 7788569 USA</p>
@@ -323,15 +324,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
   <!-- ******* All JS ******* -->
   <!-- jQuery js -->
-  <script src="js/jquery.min.js"></script>
+  <script src="{% static 'website/js/jquery.min.js' %}"></script>
   <!-- Popper js -->
-  <script src="js/popper.min.js"></script>
+  <script src="{% static 'website/js/popper.min.js' %}"></script>
   <!-- Bootstrap js -->
-  <script src="js/bootstrap.min.js"></script>
+  <script src="{% static 'website/js/bootstrap.min.js' %}"></script>
   <!-- All js -->
-  <script src="js/dento.bundle.js"></script>
+  <script src="{% static 'website/js/dento.bundle.js' %}"></script>
   <!-- Active js -->
-  <script src="js/default-assets/active.js"></script>
+  <script src="{% static 'website/js/default-assets/active.js' %}"></script>
 
 </body>
 
