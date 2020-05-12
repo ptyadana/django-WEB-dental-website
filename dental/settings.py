@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dental-app-by-ptyadana.herokuapp.com']
 
 
 # Application definition
@@ -126,6 +127,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static'),
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 # to email address
 CONTACT_US_FORM_EMAIL_TO = os.environ.get('DJANGO_EMAIL_TESTING_ACCOUNT_NAME')
 
@@ -145,4 +148,6 @@ EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = ''
 # EMAIL_HOST_PASSWORD = ' '
 # EMAIL_USE_TLS = False
+
+django_heroku.settings(locals())
 
