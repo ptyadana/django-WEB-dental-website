@@ -20,7 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'z4vh%27+$w)dz^j7!9i)zxv$(k4^w1qwm+we91+_diqubn7(+0'
+# SECRET_KEY = 'z4vh%27+$w)dz^j7!9i)zxv$(k4^w1qwm+we91+_diqubn7(+0'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -124,3 +125,24 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static'),
 ]
+
+# to email address
+CONTACT_US_FORM_EMAIL_TO = os.environ.get('DJANGO_EMAIL_TESTING_ACCOUNT_NAME')
+
+# Email settings
+# enable https://myaccount.google.com/lesssecureapps
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.environ.get('DJANGO_EMAIL_TESTING_ACCOUNT_NAME')
+EMAIL_HOST_PASSWORD = os.environ.get('DJANGO_EMAIL_TESTING_ACCOUNT_PASSWORD')
+EMAIL_USE_TLS = True
+
+# Email settings (Local Testing)
+# python -m smtpd -n -c DebuggingServer localhost:1025
+# run above command from new command line interface - this will set up new server
+# EMAIL_HOST = 'localhost'
+# EMAIL_PORT = 1025
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = ' '
+# EMAIL_USE_TLS = False
+
