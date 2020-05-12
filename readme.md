@@ -1,9 +1,9 @@
 # Dental Clinic Website
 
-Dental Clinic webiste with landing page and booking system which allows to interact with users.
+Dental Clinic webiste with landing page and contact system which allows to interact with users.
 Upon submitting details in Contact Us page, admin will recive the details via email notification to proceed with necessary follow up.
 
-[Dental Clinic - demo on Heroku](https://placeholder.com/)
+[Dental Clinic - demo on Heroku](https://dental-app-by-ptyadana.herokuapp.com/)
 
 ## Built with
 + [Python 3](https://www.python.org/) - awesome language.
